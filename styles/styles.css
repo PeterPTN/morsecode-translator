@@ -1,0 +1,110 @@
+/* Global CSS styles */
+:root {
+  font-size: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  list-style: none;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Single line truncate */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Multi line truncate */
+.multi-truncate {
+  line-height: 2rem;
+  max-height: 4rem;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+
+/* ---- Styles ---- */
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.morse {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: lightblue;
+  height: 50%;
+}
+.morse__title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.morse__form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.morse__form-input {
+  resize: none;
+  height: 15rem;
+  width: 40rem;
+  padding: 0.5rem;
+}
+.morse__form-buttons {
+  padding-top: 1rem;
+  display: flex;
+  column-gap: 1rem;
+}
+.morse__form-buttons-submit, .morse__form-buttons-clear {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.9rem;
+  border: none;
+  box-shadow: 3px 3px 1px black;
+  position: relative;
+}
+.morse__form-buttons-submit:hover, .morse__form-buttons-clear:hover {
+  top: 1px;
+  cursor: pointer;
+}
+.output {
+  background-color: rgb(149, 173, 149);
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+.output__title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.output__area {
+  resize: none;
+  height: 15rem;
+  width: 40rem;
+  padding: 0.5rem;
+}
