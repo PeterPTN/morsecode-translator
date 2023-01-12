@@ -9,13 +9,23 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <script defer src="./scripts/scripts.js" type="module"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Playfair+Display&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>
+    <header class="header">
+        <h1 class="header__title">Morsecode Translator</h1>
+    </header>
+
     <div class="morse">
         <form class="morse__form">
-            <h1 class="morse__title">Add Morse Code<span> Switch To English Icon</span></h1>
-            <textarea name="morseInput" id="morseInput" class="morse__form-input"></textarea>
+            <h2 class="morse__title">Input:</span></h2>
+            <textarea name="morseInput" id="morseInput" class="morse__form-input"
+                placeholder="Add English text or morse code..." required></textarea>
             <div class="morse__form-buttons">
                 <input type="submit" value="Translate" class="morse__form-buttons-submit">
                 <input type="reset" value="Clear" class="morse__form-buttons-clear">
@@ -24,8 +34,8 @@
     </div>
 
     <div class="output">
-        <h1 class="output__title">Output:</h1>
-        <textarea class="output__area"></textarea>
+        <h2 class="output__title">Output:</h2>
+        <textarea class="output__area" readonly></textarea>
     </div>
 
     <!-- Add Alphabet Show/Hide -->

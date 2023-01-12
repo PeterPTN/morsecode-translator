@@ -12,6 +12,10 @@
   text-decoration: none;
   scroll-behavior: smooth;
   list-style: none;
+  --spareBlue: #251749;
+  --header: #263159;
+  --firstHalf: #495579;
+  --secondHalf: #FFFBEB;
 }
 
 .text-center {
@@ -46,6 +50,24 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  position: relative;
+  font-family: "Kanit", sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 0.5rem;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  background-color: var(--header);
+  box-shadow: 0px 0px 1rem black;
+  color: var(--secondHalf);
+  letter-spacing: 5px;
+  font-family: "Playfair Display", serif;
+}
+.header .header__title {
+  font-size: 3rem;
 }
 
 .morse {
@@ -53,26 +75,35 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: lightblue;
-  height: 50%;
+  background-color: var(--firstHalf);
+  height: 45%;
 }
 .morse__title {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: -1px;
   margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--secondHalf);
 }
 .morse__form {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-top: 3rem;
 }
 .morse__form-input {
   resize: none;
   height: 15rem;
   width: 40rem;
   padding: 0.5rem;
+  border: none;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+.morse__form-input:focus {
+  outline: none;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25), 0px 2px 4px rgba(0, 0, 0, 0.25), 0px 4px 8px rgba(0, 0, 0, 0.25), 0px 8px 16px rgba(0, 0, 0, 0.25);
 }
 .morse__form-buttons {
   padding-top: 1rem;
@@ -83,28 +114,40 @@ body {
   padding: 0.35rem 0.65rem;
   font-size: 0.9rem;
   border: none;
-  box-shadow: 3px 3px 1px black;
+  box-shadow: 3px 3px 1px rgb(20, 20, 20);
   position: relative;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.85);
 }
 .morse__form-buttons-submit:hover, .morse__form-buttons-clear:hover {
   top: 1px;
   cursor: pointer;
 }
 .output {
-  background-color: rgb(149, 173, 149);
-  height: 50%;
+  background-color: var(--secondHalf);
+  height: 55%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 .output__title {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  font-weight: normal;
+  letter-spacing: -1px;
+  color: var(--firstHalf);
 }
 .output__area {
   resize: none;
   height: 15rem;
   width: 40rem;
   padding: 0.5rem;
+  text-transform: capitalize;
+  border: none;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+.output__area:focus {
+  outline: none;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15), 0px 2px 4px rgba(0, 0, 0, 0.15), 0px 4px 8px rgba(0, 0, 0, 0.15), 0px 8px 16px rgba(0, 0, 0, 0.15);
 }

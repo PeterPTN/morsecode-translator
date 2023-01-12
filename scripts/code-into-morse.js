@@ -33,8 +33,10 @@ export default function codeIntoMorse(input) {
     const result = inputAsArray
         .reduce((result, letter) => {
 
+            console.log(letter);
             // Forward slash === Space
-            if (letter == " ") result.push("/");
+            if (letter == " ") result.push("/")
+            else if (/["'!?-]/.test(letter)) result.push(letter); 
             Object.entries(morseCode).forEach(([key, value]) => {
                 if (letter === key) result.push(value);
             })

@@ -34,13 +34,14 @@ export default function decodeMorse(input) {
 
             // Forward slash === Space
             if (letter == "/") result.push(" ");
+            else if (/['!?]/.test(letter)) result.push(letter); 
             Object.entries(morseCode).forEach(([key, value]) => {
-                if (letter === value) result.push(key);
+                if (letter === value) result.push(key)
             })
 
             return result;
         }, [])
-        .join(" ")
+        .join("")
         .toLowerCase();
 
     return result;
