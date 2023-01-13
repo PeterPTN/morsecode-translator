@@ -12,6 +12,8 @@
   text-decoration: none;
   scroll-behavior: smooth;
   list-style: none;
+  --firstHalf: rgb(235, 235, 235);
+  --secondHalf: #262c36;
 }
 
 .text-center {
@@ -45,7 +47,34 @@
 body {
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  font-family: "Kanit", sans-serif;
+  background-color: var(--secondHalf);
+}
+
+.header {
+  text-align: center;
+  padding: 0.5rem;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  letter-spacing: 5px;
+  font-family: "Playfair Display", serif;
+  background-color: var(--firstHalf);
+}
+.header .header__title {
+  font-size: 3rem;
+}
+@media screen and (max-width: 800px) {
+  .header .header__title {
+    font-size: 2.5rem;
+  }
 }
 
 .morse {
@@ -53,58 +82,244 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: lightblue;
-  height: 50%;
+  background-color: var(--firstHalf);
+  height: 515px;
+  padding-top: 5.5rem;
 }
-.morse__title {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-.morse__form {
-  height: 100%;
+.morse__side {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  row-gap: 1rem;
+  margin-bottom: 1rem;
+}
+.morse__side-btn {
+  background-color: white;
+  color: var(--secondHalf);
+  left: 0.5rem;
+}
+.morse__title {
+  font-size: 2rem;
+  font-weight: lighter;
+  letter-spacing: -1px;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  color: var(--secondHalf);
+  display: flex;
+}
+@media screen and (max-width: 800px) {
+  .morse__title {
+    font-size: 1.75rem;
+  }
+}
+.morse__title button {
+  padding: 0.25rem;
+  margin: 0 0.5rem;
+  font-size: 2rem;
+  height: fit-content;
+  border-radius: 0.75rem;
+  background-color: rgb(177, 235, 133);
+  color: white;
+  text-shadow: 0px 0px 2px rgb(154, 160, 138);
+  border: none;
+  box-shadow: -3px 3px 1px black;
+  cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+  .morse__title button {
+    font-size: 1.75rem;
+  }
+}
+.morse__title button::after {
+  content: "English";
+}
+.morse__title button.morse::after {
+  content: "Morse Code";
+}
+.morse__title button:active {
+  transform: scale(0.95);
+  cursor: pointer;
+}
+.morse__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .morse__form {
+    height: 100%;
+    width: 100%;
+    padding: 0 2rem;
+  }
 }
 .morse__form-input {
   resize: none;
-  height: 15rem;
+  height: 12.5rem;
   width: 40rem;
   padding: 0.5rem;
+  border: none;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 800px) {
+  .morse__form-input {
+    width: 100%;
+    height: 70%;
+  }
+}
+.morse__form-input:focus {
+  outline: none;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15), 0px 2px 4px rgba(0, 0, 0, 0.15), 0px 4px 8px rgba(0, 0, 0, 0.15), 0px 8px 16px rgba(0, 0, 0, 0.15);
 }
 .morse__form-buttons {
   padding-top: 1rem;
   display: flex;
+  justify-content: center;
   column-gap: 1rem;
 }
 .morse__form-buttons-submit, .morse__form-buttons-clear {
-  padding: 0.35rem 0.65rem;
-  font-size: 0.9rem;
-  border: none;
-  box-shadow: 3px 3px 1px black;
-  position: relative;
+  background-color: var(--secondHalf);
+  color: rgb(230, 230, 230);
 }
-.morse__form-buttons-submit:hover, .morse__form-buttons-clear:hover {
-  top: 1px;
-  cursor: pointer;
-}
+
 .output {
-  background-color: rgb(149, 173, 149);
-  height: 50%;
+  background-color: var(--secondHalf);
+  height: 422px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 3rem;
+}
+@media screen and (max-width: 800px) {
+  .output {
+    width: 100%;
+    padding: 0 2rem;
+  }
 }
 .output__title {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  font-weight: lighter;
+  letter-spacing: -1px;
+  color: var(--firstHalf);
+}
+@media screen and (max-width: 800px) {
+  .output__title {
+    font-size: 1.75rem;
+  }
 }
 .output__area {
   resize: none;
-  height: 15rem;
+  height: 12.5rem;
   width: 40rem;
   padding: 0.5rem;
+  border: none;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 800px) {
+  .output__area {
+    width: 100%;
+    height: 50%;
+  }
+}
+.output__area:focus {
+  outline: none;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15), 0px 2px 4px rgba(0, 0, 0, 0.15), 0px 4px 8px rgba(0, 0, 0, 0.15), 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn {
+  font-size: 0.9rem;
+  border: none;
+  box-shadow: -3px 3px 1px rgb(5, 5, 5);
+  position: relative;
+  padding: 0.35rem 0.65rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+  filter: brightness(0.95);
+}
+
+.btn:active {
+  transform: scale(0.975);
+}
+
+.alphabet {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: var(--firstHalf);
+  padding: 1rem;
+  overflow-y: scroll;
+  left: -400px;
+  transition: all 0.45s ease;
+  z-index: 110;
+}
+.alphabet table {
+  border: 1px solid var(--secondHalf);
+  margin-bottom: 2rem;
+}
+.alphabet td {
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid var(--secondHalf);
+  padding: 0.25rem 0.5rem;
+}
+
+.alphabet.active {
+  left: 0;
+}
+
+.blackout.active {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.9;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  transition: all 0.25s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  display: none;
+}
+
+.modal.active {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 800px) {
+  .modal.active {
+    padding: 0 1rem;
+    text-align: center;
+  }
+}
+.modal.active h1,
+.modal.active a {
+  text-shadow: 0px 16px 3rem white, 0px 16px 2rem white, 0px 0px 5rem white, 0px 0px 4rem white, 0px 0px 3rem white, 0px 0px 2rem white, 0px 0px 16px white;
+  color: black;
+}
+.modal.active a {
+  position: relative;
+  color: darkred;
+}
+.modal.active a:active {
+  transform: scale(0.975);
+}
+
+.cell {
+  background-color: rgb(215, 220, 220);
 }
