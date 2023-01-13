@@ -1,11 +1,15 @@
 import { addAboutClass, addAlphabetClass, upvateValues } from "./dom-utils.js";
 import { decodeMorse, codeIntoMorse } from "./data-utils.js";
 
+const switchBtn = document.querySelector("#switchType");
+switchBtn.addEventListener("click", () => {
+    switchBtn.classList.toggle("morse");
+})
+
 const form = document.querySelector(".morse__form");
 form.addEventListener("submit", (event) => {
     try {
         event.preventDefault();
-
         const formData = new FormData(form);
         let input;
         let output;
@@ -18,10 +22,10 @@ form.addEventListener("submit", (event) => {
             throw new Error("No input was found");
         }
 
-        if (/[A-Za-z]/.test(input)) {
-            output = codeIntoMorse(input);
-        } else {
+        if (switchBtn.className == "morse") {
             output = decodeMorse(input);
+        } else {
+            output = codeIntoMorse(input);
         }
 
         upvateValues(output)

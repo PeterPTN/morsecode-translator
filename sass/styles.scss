@@ -50,10 +50,10 @@
 body {
     height: 100vh;
     width: 100vw;
-    overflow-y: auto;
     overflow-x: hidden;
     position: relative;
     font-family: 'Kanit', sans-serif;
+    background-color: var(--secondHalf);
 }
 
 .header {
@@ -73,6 +73,10 @@ body {
 
     .header__title {
         font-size: 3rem;
+
+        @media screen and (max-width: 800px) {
+            font-size: 2.5rem;
+        }
     }
 }
 
@@ -82,22 +86,78 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: var(--firstHalf);
-    height: 55%;
+    height: 515px;
+    padding-top: 5.5rem;
+
+    &__side {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+        margin-bottom: 1rem;
+
+        &-btn {
+            background-color: white;
+            color: var(--secondHalf);
+            left: .5rem
+        }
+    }
 
     &__title {
         font-size: 2rem;
         font-weight: lighter;
         letter-spacing: -1px;
-        margin-bottom: .5rem;
+        margin-bottom: .75rem;
         text-align: center;
         color: var(--secondHalf);
+        display: flex;
+
+        @media screen and (max-width: 800px) {
+            font-size: 1.75rem;
+        }
+
+        button {
+            padding: .25rem;
+            margin: 0 .5rem;
+            font-size: 2rem;
+            height: fit-content;
+            border-radius: .75rem;
+            background-color: rgb(177, 235, 133);
+            color: white;
+            text-shadow: 0px 0px 2px rgb(154, 160, 138);
+            border: none;
+            box-shadow: -3px 3px 1px black;
+            cursor: pointer;
+
+            @media screen and (max-width: 800px) {
+                font-size: 1.75rem;
+            }
+        }
+
+        button::after {
+            content: "English";
+        }
+
+        button.morse::after {
+            content: "Morse Code"
+        }
+
+        button:active {
+            transform: scale(.95);
+            cursor: pointer;
+        }
     }
 
     &__form {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 6.5rem;
+        
+        @media screen and (max-width: 800px) {
+            height: 100%;
+            width: 100%;
+            padding: 0 2rem;
+        }
 
         &-input {
             resize: none;
@@ -109,15 +169,20 @@ body {
                 0px 2px 4px rgba(0, 0, 0, 0.1),
                 0px 4px 8px rgba(0, 0, 0, 0.1),
                 0px 8px 16px rgba(0, 0, 0, 0.1);
+
+            @media screen and (max-width: 800px) {
+                width: 100%;
+                height: 70%;
+            }
         }
 
         &-input:focus {
             outline: none;
             box-shadow:
-                0px 1px 2px rgba(0, 0, 0, 0.25),
-                0px 2px 4px rgba(0, 0, 0, 0.25),
-                0px 4px 8px rgba(0, 0, 0, 0.25),
-                0px 8px 16px rgba(0, 0, 0, 0.25);
+                0px 1px 2px rgba(0, 0, 0, 0.15),
+                0px 2px 4px rgba(0, 0, 0, 0.15),
+                0px 4px 8px rgba(0, 0, 0, 0.15),
+                0px 8px 16px rgba(0, 0, 0, 0.15);
         }
 
         &-buttons {
@@ -128,34 +193,27 @@ body {
 
             &-submit,
             &-clear {
-                background-color: white;
+                background-color: var(--secondHalf);
+                color: rgb(230, 230, 230);
             }
         }
 
     }
 
-    &__side {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: .9rem;
-        margin-top: 1rem;
-
-        &-btn {
-            background-color: var(--secondHalf);
-            color: rgb(240, 240, 240);
-            left: .5rem
-        }
-    }
 }
 
 .output {
     background-color: var(--secondHalf);
-    height: 45%;
+    height: 422px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 3rem;
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        padding: 0 2rem;
+    }
 
     &__title {
         font-size: 2.5rem;
@@ -163,6 +221,10 @@ body {
         font-weight: lighter;
         letter-spacing: -1px;
         color: var(--firstHalf);
+
+        @media screen and (max-width: 800px) {
+            font-size: 1.75rem;
+        }
     }
 
     &__area {
@@ -176,6 +238,11 @@ body {
             0px 2px 4px rgba(0, 0, 0, 0.1),
             0px 4px 8px rgba(0, 0, 0, 0.1),
             0px 8px 16px rgba(0, 0, 0, 0.1);
+
+        @media screen and (max-width: 800px) {
+            width: 100%;
+            height: 50%;
+        }
     }
 
     &__area:focus {
@@ -213,7 +280,7 @@ body {
     padding: 1rem;
     overflow-y: scroll;
     left: -400px;
-    transition: all .35s ease-in-out;
+    transition: all .45s ease;
     z-index: 110;
 
     table {
@@ -265,15 +332,23 @@ body {
     align-items: center;
     justify-content: center;
 
-    h1,a {
-        text-shadow: 
-        0px 16px 3rem white,
-        0px 16px 2rem white,
-        0px 0px 5rem white,
-        0px 0px 4rem white,
-        0px 0px 3rem white,
-        0px 0px 2rem white,
-        0px 0px 16px white;
+    
+    @media screen and (max-width: 800px) {
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+
+    h1,
+    a {
+        text-shadow:
+            0px 16px 3rem white,
+            0px 16px 2rem white,
+            0px 0px 5rem white,
+            0px 0px 4rem white,
+            0px 0px 3rem white,
+            0px 0px 2rem white,
+            0px 0px 16px white;
         color: black;
     }
 
@@ -285,4 +360,8 @@ body {
     a:active {
         transform: scale(.975);
     }
+}
+
+.cell {
+    background-color: rgb(215, 220, 220);
 }

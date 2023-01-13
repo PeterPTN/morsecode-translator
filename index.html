@@ -22,20 +22,19 @@
     </header>
 
     <div class="morse">
+        <div class="morse__side">
+            <button id="alphabetBtn" class="morse__side-btn btn">Morse Code Alphabet</button>
+            <button id="aboutBtn" class="morse__side-btn btn">About</button>
+        </div>
+        <span class="morse__title"><button id="switchType"></button>Input:</span>
         <form class="morse__form">
-            <h2 class="morse__title">Input:</span></h2>
             <textarea name="morseInput" id="morseInput" class="morse__form-input"
-                placeholder="Add English text or morse code..." required></textarea>
+                placeholder="Add specified input..." required></textarea>
             <div class="morse__form-buttons">
                 <input type="submit" value="Translate" class="morse__form-buttons-submit btn">
                 <input type="reset" value="Clear" class="morse__form-buttons-clear btn">
             </div>
         </form>
-
-        <div class="morse__side">
-            <button id="alphabetBtn" class="morse__side-btn btn">Morse Code Alphabet</button>
-            <button id="aboutBtn" class="morse__side-btn btn">About</button>
-        </div>
     </div>
 
     <div class="output">
@@ -47,11 +46,11 @@
         <h2>Latin</h2>
         <table>
             <tr>
-                <td>A</td>
-                <td>B</td>
-                <td>C</td>
-                <td>D</td>
-                <td>E</td>
+                <td class="cell">A</td>
+                <td class="cell">B</td>
+                <td class="cell">C</td>
+                <td class="cell">D</td>
+                <td class="cell">E</td>
             </tr>
 
             <tr>
@@ -63,11 +62,11 @@
             </tr>
 
             <tr>
-                <td>F</td>
-                <td>G</td>
-                <td>H</td>
-                <td>I</td>
-                <td>J</td>
+                <td class="cell">F</td>
+                <td class="cell">G</td>
+                <td class="cell">H</td>
+                <td class="cell">I</td>
+                <td class="cell">J</td>
             </tr>
 
             <tr>
@@ -79,11 +78,11 @@
             </tr>
 
             <tr>
-                <td>K</td>
-                <td>L</td>
-                <td>M</td>
-                <td>N</td>
-                <td>O</td>
+                <td class="cell">K</td>
+                <td class="cell">L</td>
+                <td class="cell">M</td>
+                <td class="cell">N</td>
+                <td class="cell">O</td>
             </tr>
 
             <tr>
@@ -95,11 +94,11 @@
             </tr>
 
             <tr>
-                <td>P</td>
-                <td>Q</td>
-                <td>R</td>
-                <td>S</td>
-                <td>T</td>
+                <td class="cell">P</td>
+                <td class="cell">Q</td>
+                <td class="cell">R</td>
+                <td class="cell">S</td>
+                <td class="cell">T</td>
             </tr>
 
             <tr>
@@ -111,11 +110,11 @@
             </tr>
 
             <tr>
-                <td>U</td>
-                <td>V</td>
-                <td>W</td>
-                <td>X</td>
-                <td>Y</td>
+                <td class="cell">U</td>
+                <td class="cell">V</td>
+                <td class="cell">W</td>
+                <td class="cell">X</td>
+                <td class="cell">Y</td>
             </tr>
 
             <tr>
@@ -127,7 +126,7 @@
             </tr>
 
             <tr>
-                <td>Z</td>
+                <td class="cell">Z</td>
             </tr>
 
             <tr>
@@ -138,11 +137,11 @@
         <h2>Numbers</h2>
         <table>
             <tr>
-                <td>0</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
+                <td class="cell">0</td>
+                <td class="cell">1</td>
+                <td class="cell">2</td>
+                <td class="cell">3</td>
+                <td class="cell">4</td>
             </tr>
 
             <tr>
@@ -154,11 +153,11 @@
             </tr>
 
             <tr>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
+                <td class="cell">5</td>
+                <td class="cell">6</td>
+                <td class="cell">7</td>
+                <td class="cell">8</td>
+                <td class="cell">9</td>
             </tr>
 
             <tr>
@@ -173,11 +172,11 @@
         <h2>Punctuation</h2>
         <table>
             <tr>
-                <td>.</td>
-                <td>,</td>
-                <td>?</td>
-                <td>'</td>
-                <td>!</td>
+                <td class="cell">.</td>
+                <td class="cell">,</td>
+                <td class="cell">?</td>
+                <td class="cell">'</td>
+                <td class="cell">!</td>
             </tr>
 
             <tr>
@@ -189,11 +188,11 @@
             </tr>
 
             <tr>
-                <td>/</td>
-                <td>(</td>
-                <td>)</td>
-                <td>&</td>
-                <td>:</td>
+                <td class="cell">/</td>
+                <td class="cell">(</td>
+                <td class="cell">)</td>
+                <td class="cell">&</td>
+                <td class="cell">:</td>
             </tr>
 
             <tr>
@@ -205,11 +204,11 @@
             </tr>
 
             <tr>
-                <td>;</td>
-                <td>=</td>
-                <td>+</td>
-                <td>-</td>
-                <td>_</td>
+                <td class="cell">;</td>
+                <td class="cell">=</td>
+                <td class="cell">+</td>
+                <td class="cell">-</td>
+                <td class="cell">_</td>
             </tr>
 
             <tr>
@@ -221,11 +220,11 @@
             </tr>
 
             <tr>
-                <td>"</td>
-                <td>$</td>
-                <td>@</td>
-                <td>¿</td>
-                <td>¡</td>
+                <td class="cell">"</td>
+                <td class="cell">$</td>
+                <td class="cell">@</td>
+                <td class="cell">¿</td>
+                <td class="cell">¡</td>
             </tr>
 
             <tr>
@@ -237,14 +236,15 @@
             </tr>
         </table>
     </div>
-    
+
     <div class="blackout">
     </div>
 
     <div class="modal">
         <h1 class="modal__title">It's a morse code translator</h1>
         <p class="modal__tag">Made and designed by Peter</p>
-        <a class="modal__link" href="https://pptn-web-dev.netlify.app/" target="_blank" rel="noopener noreferrer">Check out more things I've made</a>
+        <a class="modal__link" href="https://pptn-web-dev.netlify.app/" target="_blank" rel="noopener noreferrer">Check
+            out more things I've made</a>
     </div>
 
 </body>

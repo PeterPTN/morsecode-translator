@@ -35,3 +35,5 @@ export const addAlphabetClass = () => {
     const alphabetAside = document.querySelector(".alphabet");
     alphabetAside.classList.toggle("active");
 }
+
+
