@@ -27,10 +27,15 @@
             <textarea name="morseInput" id="morseInput" class="morse__form-input"
                 placeholder="Add English text or morse code..." required></textarea>
             <div class="morse__form-buttons">
-                <input type="submit" value="Translate" class="morse__form-buttons-submit">
-                <input type="reset" value="Clear" class="morse__form-buttons-clear">
+                <input type="submit" value="Translate" class="morse__form-buttons-submit btn">
+                <input type="reset" value="Clear" class="morse__form-buttons-clear btn">
             </div>
         </form>
+
+        <div class="morse__side">
+            <button id="alphabetBtn" class="morse__side-btn btn">Morse Code Alphabet</button>
+            <button id="aboutBtn" class="morse__side-btn btn">About</button>
+        </div>
     </div>
 
     <div class="output">
@@ -38,9 +43,210 @@
         <textarea class="output__area" readonly></textarea>
     </div>
 
-    <!-- Add Alphabet Show/Hide -->
+    <div class="alphabet">
+        <h2>Latin</h2>
+        <table>
+            <tr>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+            </tr>
 
-    <!-- About Project, Contact Info -->
+            <tr>
+                <td>.-</td>
+                <td>-...</td>
+                <td>-.-.</td>
+                <td>-..</td>
+                <td>.</td>
+            </tr>
+
+            <tr>
+                <td>F</td>
+                <td>G</td>
+                <td>H</td>
+                <td>I</td>
+                <td>J</td>
+            </tr>
+
+            <tr>
+                <td>..-.</td>
+                <td>--.</td>
+                <td>....</td>
+                <td>..</td>
+                <td>.---</td>
+            </tr>
+
+            <tr>
+                <td>K</td>
+                <td>L</td>
+                <td>M</td>
+                <td>N</td>
+                <td>O</td>
+            </tr>
+
+            <tr>
+                <td>-.-</td>
+                <td>.-..</td>
+                <td>--</td>
+                <td>-.</td>
+                <td>---</td>
+            </tr>
+
+            <tr>
+                <td>P</td>
+                <td>Q</td>
+                <td>R</td>
+                <td>S</td>
+                <td>T</td>
+            </tr>
+
+            <tr>
+                <td>.--.</td>
+                <td>--.-</td>
+                <td>.-.</td>
+                <td>...</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>U</td>
+                <td>V</td>
+                <td>W</td>
+                <td>X</td>
+                <td>Y</td>
+            </tr>
+
+            <tr>
+                <td>..-</td>
+                <td>...-</td>
+                <td>--</td>
+                <td>-..-</td>
+                <td>-.--</td>
+            </tr>
+
+            <tr>
+                <td>Z</td>
+            </tr>
+
+            <tr>
+                <td>--..</td>
+            </tr>
+        </table>
+
+        <h2>Numbers</h2>
+        <table>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+
+            <tr>
+                <td>-----</td>
+                <td>.----</td>
+                <td>..---</td>
+                <td>...--</td>
+                <td>....-</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+
+            <tr>
+                <td>.....</td>
+                <td>-....</td>
+                <td>--...</td>
+                <td>---..</td>
+                <td>----.</td>
+            </tr>
+        </table>
+
+        <h2>Punctuation</h2>
+        <table>
+            <tr>
+                <td>.</td>
+                <td>,</td>
+                <td>?</td>
+                <td>'</td>
+                <td>!</td>
+            </tr>
+
+            <tr>
+                <td>.-.-.-</td>
+                <td>--..--</td>
+                <td>..--..</td>
+                <td>.----.</td>
+                <td>-.-.--</td>
+            </tr>
+
+            <tr>
+                <td>/</td>
+                <td>(</td>
+                <td>)</td>
+                <td>&</td>
+                <td>:</td>
+            </tr>
+
+            <tr>
+                <td>-..-.</td>
+                <td>-.--.</td>
+                <td>-.--.-</td>
+                <td>.-...</td>
+                <td>---...</td>
+            </tr>
+
+            <tr>
+                <td>;</td>
+                <td>=</td>
+                <td>+</td>
+                <td>-</td>
+                <td>_</td>
+            </tr>
+
+            <tr>
+                <td>-.-.-.</td>
+                <td>-...-</td>
+                <td>.-.-.</td>
+                <td>-....-</td>
+                <td>..--.-</td>
+            </tr>
+
+            <tr>
+                <td>"</td>
+                <td>$</td>
+                <td>@</td>
+                <td>¿</td>
+                <td>¡</td>
+            </tr>
+
+            <tr>
+                <td>.-..-.</td>
+                <td>...-..-</td>
+                <td>.--.-.</td>
+                <td>..-.-</td>
+                <td>--...-</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="blackout">
+    </div>
+
+    <div class="modal">
+        <h1 class="modal__title">It's a morse code translator</h1>
+        <p class="modal__tag">Made and designed by Peter</p>
+        <a class="modal__link" href="https://pptn-web-dev.netlify.app/" target="_blank" rel="noopener noreferrer">Check out more things I've made</a>
+    </div>
+
 </body>
 
 </html>
