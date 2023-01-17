@@ -1,5 +1,70 @@
-import { addAboutClass, addAlphabetClass, upvateValues } from "./dom-utils.js";
+import {
+    addAboutClass,
+    addAlphabetClass,
+    upvateValues, 
+    clearInputs
+} from "./dom-utils.js";
+
 import { decodeMorse, codeIntoMorse } from "./data-utils.js";
+
+const morseCode = {
+    " ": "/",
+    "A": ".-",
+    "B": "-...",
+    "C": "-.-.",
+    "D": "-..",
+    "E": ".",
+    "F": "..-.",
+    "G": "--.",
+    "H": "....",
+    "I": "..",
+    "J": ".---",
+    "K": "-.-",
+    "L": ".-..",
+    "M": "--",
+    "N": "-.",
+    "O": "---",
+    "P": ".--.",
+    "Q": "--.-",
+    "R": ".-.",
+    "S": "...",
+    "T": "-",
+    "U": "..-",
+    "W": ".--",
+    "X": "-..-",
+    "Y": "-.--",
+    "Z": "--..",
+    "0": "-----",
+    "1": ".----",
+    "2": "..---",
+    "3": "...--",
+    "4": "....-",
+    "5": ".....",
+    "6": "-....",
+    "7": "--...",
+    "8": "---..",
+    "9": "----.",
+    ".": ".-.-.-",
+    ",": "--..--",
+    "?": "..--..",
+    "'": ".----.",
+    "!": "-.-.--",
+    "/": "-..-.",
+    "(": "-.--.",
+    ")": "-.--.-",
+    "&": ".-...",
+    ":": "---...",
+    ";": "-.-.-.",
+    "=": "-...-",
+    "+": ".-.-.",
+    "-": "-....-",
+    "_": "..--.-",
+    '"': ".-..-.",
+    "$": "...-..-",
+    "@": ".--.-.",
+    "¿": "..-.-",
+    "¡": "--...-"
+};
 
 const switchBtn = document.querySelector("#switchType");
 switchBtn.addEventListener("click", () => {
@@ -23,14 +88,14 @@ form.addEventListener("submit", (event) => {
         }
 
         if (switchBtn.className == "morse") {
-            output = decodeMorse(input);
+            output = decodeMorse(input, morseCode);
         } else {
-            output = codeIntoMorse(input);
+            output = codeIntoMorse(input, morseCode);
         }
 
         upvateValues(output)
     } catch (error) {
-        alert(error);
+        upvateValues(error)
     }
 })
 
@@ -51,4 +116,10 @@ const alphaBtn = document.querySelector("#alphabetBtn");
 alphaBtn.addEventListener("click", () => {
     addAlphabetClass();
 })
+
+const clearBtn = document.querySelector(".morse__form-buttons-clear");
+clearBtn.addEventListener("click", () => {
+    clearInputs();
+})
+
 

@@ -20,8 +20,8 @@ describe('decodeMorse', () => {
     });
 
     it("returns an error message for invalid morsecode", () => {
-        expect(decodeMorse("farts")).toBe("Not valid morsecode!");
-        expect(decodeMorse("5tin/ky")).toBe("Not valid morsecode!");
+        expect(decodeMorse("-- .. -- yes")).toBe("Not valid morsecode!");
+        expect(decodeMorse("/ . / ^")).toBe("Not valid morsecode!");
         expect(decodeMorse("!@%!%")).toBe("Not valid morsecode!");
         expect(decodeMorse("hello . - .")).toBe("Not valid morsecode!");
         expect(decodeMorse("/ . a - .")).toBe("Not valid morsecode!");

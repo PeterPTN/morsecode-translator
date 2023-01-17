@@ -11,8 +11,8 @@ describe('codeIntoMorse', () => {
     
     it("returns an error for invalid inputs", () => {
         expect(codeIntoMorse("||||")).toBe("That has no proper morsecode equivalent, sorry!");
-        expect(codeIntoMorse("💩")).toBe("That has no proper morsecode equivalent, sorry!");
-        expect(codeIntoMorse("stomach||pains")).toBe("That has no proper morsecode equivalent, sorry!");
+        expect(codeIntoMorse("🦁")).toBe("That has no proper morsecode equivalent, sorry!");
+        expect(codeIntoMorse("win||lose")).toBe("That has no proper morsecode equivalent, sorry!");
         expect(codeIntoMorse("~@('args')")).toBe("That has no proper morsecode equivalent, sorry!");
         expect(codeIntoMorse("This should work~")).toBe("That has no proper morsecode equivalent, sorry!");
     })
