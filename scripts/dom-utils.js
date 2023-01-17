@@ -1,4 +1,4 @@
-export const addLatency = (output) => {
+export const addLatency = (output = "default") => {
     return (output.length * 5) + 1000;
 }
 
@@ -15,8 +15,14 @@ export const loader = (flag) => {
 export const upvateValues = (output) => {
     loader(true);
     const outputElement = document.querySelector(".output__area");
+    let latency;
     outputElement.textContent = "";
-    const latency = addLatency(output);
+
+    if (typeof output === "string") {
+        latency = addLatency(output);
+    } else {
+        latency = addLatency();
+    }
 
     setTimeout(() => {
         outputElement.textContent = output
@@ -36,4 +42,8 @@ export const addAlphabetClass = () => {
     alphabetAside.classList.toggle("active");
 }
 
+export const clearInputs = () => {
+    const outputElement = document.querySelector(".output__area");
+    outputElement.textContent = "";
+}
 
